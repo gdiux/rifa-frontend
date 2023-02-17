@@ -7,7 +7,7 @@
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-        <a class="btn btn-primary btn-sm ms-2 order-lg-3" routerLink="/carrito"><i class="fi-cart me-2"></i>Carrito</a>
+        <a class="btn btn-primary btn-sm ms-2 order-lg-3" data-bs-toggle="offcanvas" data-bs-target="#carritoOffCanvas" aria-controls="carritoOffCanvas"><i class="fi-cart me-2"></i>Carrito</a>
 
         <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
             <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
@@ -25,3 +25,40 @@
         </div>
     </div>
 </header>
+
+<!-- OFFCANVAS -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="carritoOffCanvas" aria-labelledby="carritoOffCanvasLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="carritoOffCanvasLabel">Información </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+
+        <!-- IMG -->
+        <div class="col-12 d-flex justify-content-center">
+            <img src="../../../assets/img/01.webp" class="w-75 mx-auto" style="max-width: 300px;" alt="">
+        </div>
+
+        <!-- INFO -->
+        <div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h4 class="mb-0 text-dark text-center">BMW Serie 8 Convertible</h4>
+                </li>
+                <li class="list-group-item">
+                    <h5 class="mb-0 text-dark fw-normal text-center"> $ 100,000.00 <small> x </small> {{carrito.qty}}</h5>
+                </li>
+                <li class="list-group-item">
+                    <p class="mb-0 text-center text-muted">SubTotal</p>
+                    <h4 class="h3 mb-0 text-dark text-center"> {{ carrito.qty * 100000 | currency: '$': 'symbol' : '1.0-0' }} </h4>
+                </li>
+            </ul>
+
+            <a class="btn btn-primary btn-sm w-100" routerLink="/carrito" role="button">Pagar</a>
+        </div>
+
+
+
+    </div>
+</div>
