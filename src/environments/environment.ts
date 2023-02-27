@@ -18,6 +18,7 @@ export const environment = {
   production: false,
   base_url: 'https://99reales.com/api',
   local_url: 'https://99reales.com',
+  precio: 100000
 };
 
 /*
