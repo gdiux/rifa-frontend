@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 import { WompiService } from 'src/app/services/wompi.service';
 
 @Component({
@@ -10,7 +11,8 @@ import { WompiService } from 'src/app/services/wompi.service';
 export class ConfirmacionComponent implements OnInit {
 
   constructor(  private activatedRoute: ActivatedRoute,
-                private wompiService: WompiService){
+                private wompiService: WompiService,
+                private cartService: CartService){
 
                   activatedRoute.queryParams.subscribe( ({id}) => {
 
@@ -36,10 +38,25 @@ export class ConfirmacionComponent implements OnInit {
         .subscribe( ({data}: any)  => {
 
           this.transaction = data;
-          console.log(data);
           
+          if (data.status === 'APPROVED') {
+            this.updateQty(0);
+          }
 
         });
+
+  }
+
+  /** ======================================================================
+   * ADD OR REMOVE QTY OF CART
+  ======================================================================== */
+  updateQty(qty: any){
+
+    qty = Number(qty);
+
+    this.cartService.carrito.qty! = qty;
+
+    this.cartService.updateQty();
 
   }
 

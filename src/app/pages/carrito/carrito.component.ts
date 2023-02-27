@@ -22,7 +22,7 @@ export class CarritoComponent implements OnInit {
   public url: string = `${environment.local_url}/confirmacion`;
 
   constructor(  private cartService: CartService){
-    this.carrito = cartService.carrito;
+        this.carrito = cartService.carrito;
   }
 
   ngOnInit(): void {
@@ -44,5 +44,7 @@ export class CarritoComponent implements OnInit {
     this.cartService.updateQty();
 
   }
+
+
 
 }
