@@ -6,19 +6,17 @@
   base_url: 'http://localhost:3500/api',
   local_url: 'http://localhost:4200',
 
-  base_url: 'https://realstate.ddns.net/api',
-  local_url: 'https://realstate.ddns.net',
-
-  base_url: 'https://99reales.com/api',
-  local_url: 'https://99reales.com',
+  base_url: 'christiangazabon.ddns.net/api',
+  local_url: 'christiangazabon.ddns.net',
 
  */
 
 export const environment = {
   production: false,
-  base_url: 'https://99reales.com/api',
-  local_url: 'https://99reales.com',
-  precio: 100000
+  base_url: 'https://rifabmw.ddns.net/api',
+  local_url: 'https://rifabmw.ddns.net',
+  precio: 100000,
+  pub_key: 'pub_test_EGvSa7FvhdLjIqMIshdiRgQGXPgGBpPd',  
 };
 
 /*
